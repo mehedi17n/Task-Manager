@@ -1,11 +1,10 @@
 {% include 'base.html' %}
-<h2> Task Update</h2>
+<h2> Update Task</h2>
 
 <form method="post" autocomplete="off">
     {% csrf_token %}
 
     {{form.as_p}}
-
 
     <input type="submit" value="Submit"/>
 
