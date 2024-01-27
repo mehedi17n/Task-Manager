@@ -1,0 +1,12 @@
+{% include 'base.html' %}
+<h2> Task Delete</h2>
+
+<form method="post" autocomplete="off">
+    {% csrf_token %}
+
+    <p> Are you sure you want to delete "{{object}}" ? </p>
+    <input type="submit" value="Delete"/>
+    <br> <br>
+    <a href="{% url 'view-task' %}"> Go back </a>
+    
+</form>
