@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Index</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://bootswatch.com/5/minty/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <style>
+      .task-container {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+
+      .task-container a {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+
+  {% include 'base.html' %}
+
+  <body>
+    <div class="container bg-white shadow-md p-5 center-container">
+      <h3>My Tasks</h3>
+      <hr />
+      {% for tsk in task %}
+      <div class="task-container">
+        <strong>Title: </strong>{{ tsk.title }}
+        <br />
+        <strong>Content: </strong> {{ tsk.content }} <br />
+        <br />
+        <a
+          href="{% url 'update-task' tsk.id %}"
+          class="btn btn-primary text-white"
+          >Update Task</a
+        >
+        <a
+          href="{% url 'delete-task' tsk.id %}"
+          class="btn btn-danger text-white"
+          >Delete Task</a
+        >
+        <br />
+        <br />
+      </div>
+      {% endfor %}
+      <br />
+    </div>
+  </body>
+</html>

@@ -17,4 +17,17 @@ urlpatterns = [
 
     # - Logout
     path('user-logout/', views.user_logout, name = "user-logout"),
+
+     # - Create a Task
+    path('create-task/', views.createTask, name = "create-task"),
+
+    # - Read Task
+    path('view-tasks/', views.viewTask, name = "view-tasks"),
+
+    # - Update Task
+    path('update-task/<str:pk>/', views.updateTask, name = "update-task"),
+
+    # - Delete Task
+    path('delete-task/<str:pk>/', views.deleteTask, name = "delete-task"),
+
 ]

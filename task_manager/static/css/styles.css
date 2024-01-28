@@ -1,6 +1,17 @@
-.form-layout {
+.center-container {
     border-radius: 10px;
     width: 500px;
-    border: 10px;
-    border-color: aquamarine;
+}
+
+.task-container {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.task-container a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
 }
