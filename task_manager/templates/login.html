@@ -1,10 +1,35 @@
-{% include 'base.html' %}
-<h2> This is login Page </h2>
-<form method="post" autocomplete="off">
-    {% csrf_token %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Index</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://bootswatch.com/5/minty/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+  </head>
 
-    {{form.as_p}}
+  {% include 'base.html' %}
 
-    <input type="submit" value="Submit"/>
-
-</form>
+  <div class="conainer bg-white shadow-md p-5 form-layout">
+    <h3>Login Here</h3>
+    <hr> <br>
+    <form method="post" autocomplete="off">
+      {% csrf_token %} 
+      {{form|crispy}}
+      <br>
+      <input class="btn btn-primary navbar-btn" type="submit" value="Login" />
+    </form>
+  </div>
+</html>
