@@ -31,7 +31,10 @@
       <br />
       {{form.content|as_crispy_field}}
       <br />
-      <input class="btn btn-primary navbar-btn" type="submit" value="Create" />
+      <input class="btn btn-primary navbar-btn" type="submit" value="Update" />
+      <br />
+      <br />
+      <a href="{% url 'view-tasks' %}"> Go Back </a>
     </form>
   </div>
 </html>

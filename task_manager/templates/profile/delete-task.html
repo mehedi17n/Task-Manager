@@ -1,5 +1,4 @@
-{% load static %}
-{% load crispy_forms_tags %}
+{% load static %} {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,12 +23,14 @@
 
   <div class="container bg-white shadow-md p-5 center-container">
     <h3>Delete Task!</h3>
-    <hr> <br>
+    <hr />
+    <br />
     <form method="post" autocomplete="off">
-        {% csrf_token %}
-    <p> Are you sure you want to delete? </p>
-    <a href="{% url 'view-tasks' %}"> Go Back </a>
-    <br> <br>
+      {% csrf_token %}
+      <p>Are you sure you want to delete?</p>
+      <a href="{% url 'view-tasks' %}"> Go Back </a>
+      <br />
+      <br />
       <input class="btn btn-danger" type="submit" value="Delete" />
     </form>
   </div>
